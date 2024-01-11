@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: erp
+    description: fonte SAP de vendas da Adventure Works
+    schema: sap_adw
+    tables:
+    - name: product
+    - name: salesorderdetail
+    - name: salesreason
+    - name: person
+    - name: salesorderheader
+    - name: stateprovince
+    - name: address
+    - name: countryregion
+    - name: customer
