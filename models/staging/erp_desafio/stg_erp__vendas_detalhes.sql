@@ -1,5 +1,5 @@
 with
-    fonte_ordem_vendas as (
+    fonte_vendas_detalhes as (
         select 
         cast (salesorderid as int) as id_pedido_venda
         , cast (salesorderdetailid as int) as id_detalhe_venda
@@ -15,4 +15,4 @@ with
     )
 
 select *
-from fonte_ordem_vendas
+from fonte_vendas_detalhes

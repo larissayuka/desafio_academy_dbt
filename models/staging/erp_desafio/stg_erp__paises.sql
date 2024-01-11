@@ -1,5 +1,5 @@
 with
-    fonte_endereco as (
+    fonte_paises as (
         select 
         cast (countryregioncode as string) as codigo_pais
         , cast (name as string) as nome_pais
@@ -8,4 +8,4 @@ with
     )
 
 select *
-from fonte_endereco
+from fonte_paises

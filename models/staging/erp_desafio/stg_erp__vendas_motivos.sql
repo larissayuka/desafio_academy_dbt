@@ -1,5 +1,5 @@
 with
-    fonte_motivo_vendas as (
+    fonte_vendas_motivos as (
         select 
         cast (salesreasonid as int) as id_motivo_venda
         , cast (name as string) as nome
@@ -9,4 +9,4 @@ with
     )
 
 select *
-from fonte_motivo_vendas
+from fonte_vendas_motivos

@@ -1,5 +1,5 @@
 with
-    fonte_endereco as (
+    fonte_enderecos as (
         select 
         cast (addressid as int) as id_endereco
         , cast (addressline1 as string) as endereco1
@@ -14,4 +14,4 @@ with
     )
 
 select *
-from fonte_endereco
+from fonte_enderecos

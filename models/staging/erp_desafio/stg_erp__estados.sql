@@ -1,5 +1,5 @@
 with
-    fonte_estado as (
+    fonte_estados as (
         select 
         cast (stateprovinceid as int) as id_estado
         ,cast (stateprovincecode as string) as codigo_estado
@@ -13,4 +13,4 @@ with
     )
 
 select *
-from fonte_estado
+from fonte_estados

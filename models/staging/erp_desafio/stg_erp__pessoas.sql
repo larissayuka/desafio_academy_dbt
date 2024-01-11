@@ -5,9 +5,7 @@ with
         , cast (persontype as string) as tipo_pessoa
         , cast (namestyle as string) as estilo_nome
         , cast (title as  string) as titulo
-        , cast (firstname as string) as primeiro_nome
-        , cast (middlename as string) as meio_nome
-        , cast (lastname as string) as ultimo_nome
+        , cast (firstname as string)  || ' ' || cast (lastname as string) as nome_pessoa
         , cast (suffix as string) as sufixo
         , cast (emailpromotion as int) as promocao_email
         , cast (additionalcontactinfo as string) as info_adicional

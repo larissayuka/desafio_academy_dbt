@@ -1,5 +1,5 @@
 with
-    fonte_data_vendas as (
+    fonte_vendas_pedidos as (
         select 
         cast (salesorderid as int) as id_venda
         , cast (revisionnumber as int) as numero_revisao
@@ -30,4 +30,4 @@ with
     )
 
 select *
-from fonte_data_vendas
+from fonte_vendas_pedidos

@@ -6,11 +6,22 @@ sources:
     schema: sap_adw
     tables:
     - name: person
+      description: tabela contendo informações de pessoas.
     - name: customer
+      description: tabela contendo informações de clientes.
     - name: salesreason
+      description: tabela contendo informações de motivos de vendas.
     - name: salesorderheader
+      description: tabela contendo informações de pedidos de vendas.
     - name: salesorderdetail
+      description: tabela contendo informações de detalhes de vendas.
+    - name: salesorderheadersalesreason
+      description: tabela contendo informações para unir pedidos e detalhes dos pedidos.
     - name: product
-    - name: stateprovince
+      description: tabela contendo informações de produtos.
     - name: address
+      description: tabela contendo informações de detalhes de endereços.
+    - name: stateprovince
+      description: tabela contendo informações de estados.
     - name: countryregion
+      description: tabela contendo informações de detalhes de países.
