@@ -5,12 +5,12 @@ sources:
     description: fonte SAP de vendas da Adventure Works
     schema: sap_adw
     tables:
-    - name: product
-    - name: salesorderdetail
-    - name: salesreason
     - name: person
+    - name: customer
+    - name: salesreason
     - name: salesorderheader
+    - name: salesorderdetail
+    - name: product
     - name: stateprovince
     - name: address
     - name: countryregion
-    - name: customer
