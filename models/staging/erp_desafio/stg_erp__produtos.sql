@@ -2,7 +2,7 @@ with
     fonte_produtos as (
         select 
         cast (productid as int) as id_produto
-        , cast (name as string) as nome
+        , cast (name as string) as nome_produto
         , cast (productnumber as string) as numero_produto
         , cast (makeflag as string) as makeflag
         , cast (finishedgoodsflag as string) as finishedgoodsflag

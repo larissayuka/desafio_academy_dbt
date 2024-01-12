@@ -1,9 +1,9 @@
 with
     fonte_vendas_pedidos as (
         select 
-        cast (salesorderid as int) as id_venda
+        cast (salesorderid as int) as id_pedido_venda
         , cast (revisionnumber as int) as numero_revisao
-        , cast (orderdate as string) as data
+        , cast (orderdate as string) as data_pedido
         , cast (duedate as string) as data_vencimento
         , cast (shipdate as string) as data_envio
         , cast (status as int) as status
