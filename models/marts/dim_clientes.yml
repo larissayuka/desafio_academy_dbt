@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: dimensão de clientes
+    columns:
+      - name: id_entidade_comercial_pessoa
+        description: <>
+      - name: tipo_pessoa
+        description: <>
+      - name: estilo_nome_pessoa
+        description: <>
+      - name: titulo_pessoa
+        description: <>
+      - name: nome_pessoa
+        description: <>
+      - name: sufixo_pessoa
+        description: <>
+      - name: promocao_email_pessoa
+        description: <>
+      - name: info_adicional_pessoa
+        description: <>
+      - name: demografia_pessoa
+        description: <>
+      - name: rowguid_pessoa
+        description: <>
+      - name: data_modificada_pessoa
+        description: <>

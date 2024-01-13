@@ -7,6 +7,12 @@ sources:
     tables:
     - name: person
       description: tabela contendo informações de pessoas.
+      columns:
+        - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
     - name: customer
       description: tabela contendo informações de clientes.
     - name: salesreason
@@ -18,13 +24,13 @@ sources:
             - unique
             - not_null  
     - name: salesorderheader
-      description: tabela contendo informações de pedidos de vendas.
+      description: tabela contendo informações de pedidos de vendas. 
       columns:
         - name: salesorderid
           description: chave primária
           tests:
             - unique
-            - not_null            
+            - not_null        
     - name: salesorderdetail
       description: tabela contendo informações de detalhes de vendas.
     - name: salesorderheadersalesreason
@@ -38,7 +44,7 @@ sources:
             - unique
             - not_null  
     - name: address
-      description: tabela contendo informações de detalhes de endereços.
+      description: tabela contendo informações de detalhes de endereços.  
     - name: stateprovince
       description: tabela contendo informações de estados.
       columns:

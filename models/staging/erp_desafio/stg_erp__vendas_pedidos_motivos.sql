@@ -1,9 +1,9 @@
 with
     fonte_vendas_pedidos_motivos as (
         select 
-        cast (salesorderid as int) as id_pedido_venda
-        , cast (salesreasonid as int) as id_motivo_venda
-        , cast (modifieddate as string) as data_modificada
+        cast (salesorderid as int) as id_venda_pedido_chave
+        , cast (salesreasonid as int) as id_venda_motivo_chave
+        , cast (modifieddate as string) as data_modificada_chave
         from {{source('erp','salesorderheadersalesreason')}}
     )
 

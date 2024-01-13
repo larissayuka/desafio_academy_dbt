@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dim_endetecos
+    description: dimensão de clientes
+    columns:
+      - name: id_endereco
+        description: <>
+      - name: endereco1_endereco
+        description: <>
+      - name: endereco2_endereco
+        description: <>
+      - name: cidade_endereco
+        description: <>
+      - name: id_estado_endereco
+        description: <>
+      - name: codigo_postal_endereco
+        description: <>
+      - name: localizacao_espacial_endereco
+        description: <>
+      - name: rowguid_endereco
+        description: <>
+      - name: data_modificada_endereco
+        description: <>
+      - name: id_estado
+        description: <>
+      - name: codigo_estado
+        description: <>
+      - name: codigo_pais_estado
+        description: <>
+      - name: isonlystateprovinceflag_estado
+        description: <>
+      - name: nome_estado
+        description: <>
+      - name: id_territorio_estado
+        description: <>
+      - name: rowguid_estado
+        description: <>
+      - name: data_modificada_estado
+        description: <>
+      - name: codigo_pais
+        description: <>
+      - name: nome_pais
+        description: <>
+      - name: data_modificada_pais
+        description: <>
