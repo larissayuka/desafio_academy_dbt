@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    description: dimensão de clientes
+    columns:
+      - name: id_produto
+        description: <>
+      - name: nome_produto
+        description: <>
+      - name: numero_produto
+        description: <>
+      - name: makeflag_produto
+        description: <>
+      - name: finishedgoodsflag_produto
+        description: <>
+      - name: cor_produto
+        description: <>
+      - name: nivel_estoque_produto
+        description: <>
+      - name: ponto_reabastecimento_produto
+        description: <>
+      - name: custo_padrao_produto
+        description: <>
+      - name: tabela_preco_produto
+        description: <>
+      - name: tamanho_produto
+        description: <>
+      - name: unidade_tamanho_produto
+        description: <>
+      - name: unidade_peso_produto
+        description: <>
+      - name: peso_produto
+        description: <>
+      - name: data_fabricar_produto
+        description: <>
+      - name: linha_fabricacao_produto
+        description: <>
+      - name: classificacao_produto
+        description: <>
+      - name: estilo_produto
+        description: <>
+      - name: id_subcategoria_produto
+        description: <>
+      - name: id_modelo_produto
+        description: <>
+      - name: data_inicio_venda_produto
+        description: <>
+      - name: data_fim_venda_produto
+        description: <>
+      - name: data_descontinuada_produto
+        description: <>
+      - name: rowguid_produto
+        description: <>
+      - name: data_modificada_produto
+        description: <>

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_endetecos
+  - name: dim_enderecos
     description: dimensão de clientes
     columns:
       - name: id_endereco

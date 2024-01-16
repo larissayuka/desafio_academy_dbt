@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_vendas_pedidos_detalhes
+    description: modelo intermediário que faz a relação pedidos e detalhes.
+    columns:
+      - name: sk_venda
+        description: chave surrogada da tabela pedidos e detalhes.
+        tests:
+          - unique
+          - not_null
