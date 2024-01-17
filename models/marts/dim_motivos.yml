@@ -2,19 +2,15 @@ version: 2
 
 models:
   - name: dim_motivos
-    description: dimensão de clientes
+    description: dimensão de motivos
     columns:
       - name: id_venda_motivo
-        description: <>
+        description: chave primária da tabela motivos
+        tests:
+          - not_null
       - name: nome_motivo
         description: <>
       - name: tipo_motivo
         description: <>
-      - name: data_modificada_motivo
-        description: <>
       - name: id_venda_pedido_chave
-        description: <>
-      - name: id_venda_motivo_chave
-        description: <>
-      - name: data_modificada_chave
         description: <>

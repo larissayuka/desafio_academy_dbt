@@ -35,6 +35,14 @@ sources:
       description: tabela contendo informações de detalhes de vendas.
     - name: salesorderheadersalesreason
       description: tabela contendo informações para unir pedidos e detalhes dos pedidos.
+    - name: salesterritory
+      description: tabela contendo informações de território.
+      columns:
+        - name: territoryid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
     - name: product
       description: tabela contendo informações de produtos.
       columns:

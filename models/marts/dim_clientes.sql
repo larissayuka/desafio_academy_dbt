@@ -1,19 +1,10 @@
 with
-    stg_pessoas as (
+    stg_cliente as (
         select 
-        id_entidade_comercial_pessoa
-        , tipo_pessoa
-        , estilo_nome_pessoa
-        , titulo_pessoa
-        , nome_pessoa
-        , sufixo_pessoa
-        , promocao_email_pessoa
-        , info_adicional_pessoa
-        , demografia_pessoa
-        , rowguid_pessoa
-        , data_modificada_pessoa
-        from {{ ref('stg_erp__pessoas') }}
+        id_cliente
+        , id_territorio_cliente
+        from {{ ref('stg_erp__clientes') }}
     )
 
 select *
-from stg_pessoas
+from stg_cliente
