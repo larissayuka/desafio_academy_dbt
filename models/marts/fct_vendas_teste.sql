@@ -9,6 +9,11 @@ with
         from {{ ref('dim_enderecos') }}
     )
 
+    , motivos as (
+        select *
+        from {{ ref('dim_motivos') }}
+    )
+
     , produtos as (
         select *
         from {{ ref('dim_produtos') }}
@@ -16,16 +21,18 @@ with
 
     , int_vendas as (
         select *
-        from {{ ref('int_vendas') }}
+        from {{ ref('int_vendas_pedidos_detalhes') }}
     )
 
     , joined_tabelas as (
         select *
         from int_vendas
-        left join produtos on
-        int_vendas.id_produto_detalhe = produtos.id_produto
         left join enderecos on
         int_vendas.id_territorio_pedido = enderecos.id_territorio
+        left join motivos on
+        int_vendas.id_venda_pedido = motivos.id_venda_pedido_chave
+        left join produtos on
+        int_vendas.id_produto_detalhe = produtos.id_produto
         left join clientes on
         int_vendas.id_cliente_pedido = clientes.id_cliente
     )
@@ -34,14 +41,15 @@ with
         select 
         *
         , quantidade_pedido_detalhe * preco_unitario_detalhe as faturamento_bruto
-        , quantidade_pedido_detalhe * preco_unitario_detalhe - (quantidade_pedido_detalhe * preco_unitario_detalhe * (1-preco_desconto_detalhe)) as desconto_produto
+        , quantidade_pedido_detalhe * preco_unitario_detalhe * (preco_desconto_detalhe) as desconto_produto
         from joined_tabelas
     )
 
+
     , select_final as (
-        select
+        select *
         /*CHAVE*/
-        sk_venda
+        /*sk_venda
         , id_venda_pedido_detalhe
         , id_cliente_pedido
         , id_territorio_pedido
@@ -58,9 +66,9 @@ with
         , id_cliente
         , id_territorio_cliente
         /*DATA*/
-        , data_pedido
+        /*, data_pedido
         /*METRICA*/
-        , subtotal_pedido
+        /*, subtotal_pedido
         , taxamt_pedido
         , frete_pedido
         , valor_total_pedido
@@ -70,7 +78,7 @@ with
         , faturamento_bruto
         , desconto_produto
         /*CATEGORIA*/
-        , status_pedido
+        /*, status_pedido
         , nome_produto
         , nivel_estoque_produto
         , ponto_reabastecimento_produto
@@ -83,7 +91,7 @@ with
         , nome_estado
         , codigo_pais
         , nome_pais
-        , nome_territorio
+        , nome_territorio*/
         from transformacoes
     )
     

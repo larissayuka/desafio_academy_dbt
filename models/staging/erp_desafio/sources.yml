@@ -68,4 +68,14 @@ sources:
           description: chave primária
           tests:
             - unique
-            - not_null  
+            - not_null 
+    - name: salesperson
+      description: tabela contendo informações de vendedores.
+      columns:
+        - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
+    - name: salesterritoryhistory
+      description: tabela contendo informações de historico de território.
