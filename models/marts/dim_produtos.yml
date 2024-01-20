@@ -5,13 +5,11 @@ models:
     description: dimensão de clientes
     columns:
       - name: id_produto
-        description: chave primária da tabela produtos
+        description: chave primária
         tests:
           - unique
           - not_null
       - name: nome_produto
-        description: <>
+        description: coluna contendo o nome dos produtos
       - name: nivel_estoque_produto
-        description: <>
-      - name: ponto_reabastecimento_produto
-        description: <>
+        description: coluna contendo a quantidade de produto em estoque

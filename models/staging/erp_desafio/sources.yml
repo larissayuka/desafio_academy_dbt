@@ -15,6 +15,12 @@ sources:
             - not_null
     - name: customer
       description: tabela contendo informações de clientes.
+      columns:
+        - name: customerid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
     - name: salesreason
       description: tabela contendo informações de motivos de vendas.
       columns:
@@ -33,6 +39,12 @@ sources:
             - not_null        
     - name: salesorderdetail
       description: tabela contendo informações de detalhes de vendas.
+      columns:
+        - name: salesorderdetailid
+          description: chave primária
+          tests:
+            - unique
+            - not_null  
     - name: salesorderheadersalesreason
       description: tabela contendo informações para unir pedidos e detalhes dos pedidos.
     - name: salesterritory
@@ -52,7 +64,13 @@ sources:
             - unique
             - not_null  
     - name: address
-      description: tabela contendo informações de detalhes de endereços.  
+      description: tabela contendo informações de detalhes de endereços.
+      columns:
+        - name: addressid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
     - name: stateprovince
       description: tabela contendo informações de estados.
       columns:
@@ -69,13 +87,19 @@ sources:
           tests:
             - unique
             - not_null 
-    - name: salesperson
-      description: tabela contendo informações de vendedores.
+    - name: creditcard
+      description: tabela contendo informações do cartão
+      columns:
+        - name: creditcardid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: personcreditcard
+      description: tabela contendo informações do endereço da entidade comercial
       columns:
         - name: businessentityid
           description: chave primária
           tests:
             - unique
-            - not_null
-    - name: salesterritoryhistory
-      description: tabela contendo informações de historico de território.
+            - not_null 

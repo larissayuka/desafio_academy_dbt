@@ -4,31 +4,46 @@ models:
   - name: dim_enderecos
     description: dimensão de clientes
     columns:
+      - name: id_endereco
+        description: chave primária
+        tests:
+          - unique
+          - not_null
+      - name: endereco1_endereco
+        description: coluna contendo endereço
+      - name: cidade_endereco
+        description: coluna contendo a cidade do endereço
+      - name: id_estado_endereco
+        description: chave estrangeira 
+        tests:
+          - not_null
       - name: id_estado
-        description: chave primária da tabela estados
+        description: chave primária 
         tests:
           - not_null
       - name: codigo_estado
-        description: <>
+        description: coluna contendo o código do estado
+      - name: codigo_pais_estado
+        description: chave estrangeira 
+        tests:
+          - not_null
       - name: nome_estado
-        description: <>
-      - name: id_endereco
-        description: <>
-      - name: endereco1_endereco
-        description: <>
-      - name: cidade_endereco
-        description: <>
-      - name: codigo_postal_endereco
-        description: <>
+        description: coluna contendo o nome do estado
+      - name: id_territorio_estado
+        description: chave estrangeira
+        tests:
+          - not_null
       - name: codigo_pais
-        description: chave primária da tabela países
+        description: chave primária 
         tests:
           - not_null
       - name: nome_pais
-        description: <>
+        description: coluna contendo o nome do país
       - name: id_territorio
-        description: chave primária da tabela territórios
+        description: chave primária 
         tests:
           - not_null
       - name: nome_territorio
-        description: <>
+        description: coluna contendo o nome do terrítório
+      - name: codigo_pais_territorio
+        description: coluna contendo o código do país

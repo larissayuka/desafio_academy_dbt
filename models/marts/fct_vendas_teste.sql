@@ -19,6 +19,11 @@ with
         from {{ ref('dim_produtos') }}
     )
 
+    , cartoes as (
+        select *
+        from {{ ref('dim_cartoes') }}
+    )
+
     , int_vendas as (
         select *
         from {{ ref('int_vendas_pedidos_detalhes') }}
@@ -35,6 +40,8 @@ with
         int_vendas.id_produto_detalhe = produtos.id_produto
         left join clientes on
         int_vendas.id_cliente_pedido = clientes.id_cliente
+        left join cartoes on
+        int_vendas.id_cartao_credito_pedido = cartoes.id_cartao
     )
 
     , transformacoes as (

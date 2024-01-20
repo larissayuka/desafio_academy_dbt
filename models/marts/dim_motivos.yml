@@ -4,13 +4,24 @@ models:
   - name: dim_motivos
     description: dimensão de motivos
     columns:
+      - name: sk_motivo
+        description: chave surrogada da tabela motivos
+        tests:
+          - unique
+          - not_null
+      - name: id_venda_pedido_chave
+        description: chave estrangeira
+        tests:
+          - not_null
+      - name: id_venda_motivo_chave
+        description: chave estrangeira
+        tests:
+          - not_null
       - name: id_venda_motivo
-        description: chave primária da tabela motivos
+        description: chave primária
         tests:
           - not_null
       - name: nome_motivo
-        description: <>
+        description: coluna contendo o motivo da venda
       - name: tipo_motivo
-        description: <>
-      - name: id_venda_pedido_chave
-        description: <>
+        description: coluna contendo o tipo do motivo

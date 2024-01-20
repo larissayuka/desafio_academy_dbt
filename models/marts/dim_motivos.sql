@@ -23,6 +23,12 @@ with
         left join stg_vendas_motivos on
         stg_vendas_pedidos_motivos.id_venda_motivo_chave = stg_vendas_motivos.id_venda_motivo
     )
+    , criar_chave as (
+        select
+        cast (id_venda_pedido_chave as string) || '-' || cast (id_venda_motivo_chave as string) as sk_motivo
+        , *
+        from joined_tabelas
+    )
 
 select *
-from joined_tabelas
+from criar_chave
