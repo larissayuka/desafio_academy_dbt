@@ -32,50 +32,64 @@ with
     , joined_tabelas as (
         select *
         from int_vendas
-        left join enderecos on
-        int_vendas.id_territorio_pedido = enderecos.id_territorio
-        left join motivos on
-        int_vendas.id_venda_pedido = motivos.id_venda_pedido_chave
         left join produtos on
         int_vendas.id_produto_detalhe = produtos.id_produto
-        left join clientes on
-        int_vendas.id_cliente_pedido = clientes.id_cliente
+        left join motivos on
+        int_vendas.id_venda_pedido = motivos.id_venda_pedido_chave
         left join cartoes on
         int_vendas.id_cartao_credito_pedido = cartoes.id_cartao
+        left join enderecos on
+        int_vendas.id_enviar_para_endereco_pedido = enderecos.id_endereco
+        left join clientes on
+        int_vendas.id_cliente_pedido = clientes.id_cliente
+  
     )
 
     , transformacoes as (
         select 
         *
         , quantidade_pedido_detalhe * preco_unitario_detalhe as faturamento_bruto
+        , quantidade_pedido_detalhe * preco_unitario_detalhe * (1-preco_desconto_detalhe) as faturamento_liquido
         , quantidade_pedido_detalhe * preco_unitario_detalhe * (preco_desconto_detalhe) as desconto_produto
         from joined_tabelas
     )
 
 
     , select_final as (
-        select *
+        select 
         /*CHAVE*/
-        /*sk_venda
-        , id_venda_pedido_detalhe
+        sk_venda
+        , id_venda_pedido
         , id_cliente_pedido
         , id_territorio_pedido
-        , id_enviar_para_endereco_pedido
         , id_cartao_credito_pedido
+        , id_venda_pedido_detalhe
         , id_venda_pedido_detalhe_detalhe
         , id_produto_detalhe
-        , id_produto
-        , id_venda_motivo
-        , id_venda_pedido_chave
+        , id_enviar_para_endereco_pedido
         , id_endereco
+        , id_estado_endereco
         , id_estado
+        , id_territorio_estado
+        , codigo_pais_estado
+        , codigo_pais
         , id_territorio
+        , codigo_pais_territorio       
+        , sk_motivo
+        , id_venda_pedido_chave
+        , id_venda_motivo_chave
+        , id_venda_motivo
+        , id_produto
         , id_cliente
-        , id_territorio_cliente
+        , id_pessoa_cliente
+        , id_loja_cliente
+        , id_entidade_comercial_loja
+        , id_entidade_comercial_pessoa
+        , id_cartao       
         /*DATA*/
-        /*, data_pedido
+        , data_pedido
         /*METRICA*/
-        /*, subtotal_pedido
+        , subtotal_pedido
         , taxamt_pedido
         , frete_pedido
         , valor_total_pedido
@@ -83,23 +97,25 @@ with
         , preco_unitario_detalhe
         , preco_desconto_detalhe
         , faturamento_bruto
-        , desconto_produto
+        , faturamento_liquido
+        , desconto_produtO        
         /*CATEGORIA*/
-        /*, status_pedido
-        , nome_produto
-        , nivel_estoque_produto
-        , ponto_reabastecimento_produto
-        , nome_motivo
-        , tipo_motivo
+        , status_pedido
         , endereco1_endereco
         , cidade_endereco
-        , codigo_postal_endereco
-        , codigo_estado
         , nome_estado
-        , codigo_pais
         , nome_pais
-        , nome_territorio*/
+        , nome_territorio
+        , nome_motivo
+        , tipo_motivo
+        , nome_produto
+        , tipo_cartao
+        , nome_pessoa 
+        , nome_loja       
         from transformacoes
+
+
+
     )
     
 select *

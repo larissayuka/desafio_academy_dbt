@@ -16,6 +16,7 @@ with
         , stg_vendas_pedidos.status_pedido
         , stg_vendas_pedidos.id_cliente_pedido
         , stg_vendas_pedidos.id_territorio_pedido
+        , stg_vendas_pedidos.id_enviar_para_endereco_pedido
         , stg_vendas_pedidos.id_cartao_credito_pedido
         , stg_vendas_pedidos.subtotal_pedido
         , stg_vendas_pedidos.taxamt_pedido
@@ -28,10 +29,10 @@ with
         , stg_vendas_detalhes.id_produto_detalhe
         , stg_vendas_detalhes.preco_unitario_detalhe
         , stg_vendas_detalhes.preco_desconto_detalhe
-
-        from stg_vendas_pedidos
-        left join stg_vendas_detalhes on 
-            stg_vendas_pedidos.id_venda_pedido = stg_vendas_detalhes.id_venda_pedido_detalhe
+        
+        from stg_vendas_detalhes
+        left join stg_vendas_pedidos on 
+        stg_vendas_detalhes.id_venda_pedido_detalhe = stg_vendas_pedidos.id_venda_pedido
     )
 
     , criar_chave as (
@@ -41,5 +42,6 @@ with
         from joined_tabelas
     )
 
-select * 
+select *
 from criar_chave
+order by sk_venda

@@ -95,10 +95,34 @@ sources:
           tests:
             - unique
             - not_null 
-    - name: personcreditcard
-      description: tabela contendo informações do endereço da entidade comercial
+    - name: store
+      description: tabela contendo informações das lojas
       columns:
         - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: businessentity
+      description: tabela para relação de ids
+      columns:
+        - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: businessentityaddress
+      description: tabela para relação de idsde endereços
+      columns:
+        - name: addressid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: businessentitycontact
+      description: tabela contendo id dos contatos
+      columns:
+        - name: personid
           description: chave primária
           tests:
             - unique

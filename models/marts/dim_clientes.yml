@@ -9,5 +9,16 @@ models:
         tests:
           - unique
           - not_null
-      - name: id_territorio_cliente
-        description: <>
+      - name: id_pessoa_cliente
+        description: chave estrangeira FK2
+      - name: id_entidade_comercial_pessoa
+        description: cheve estrangeira FK1
+      - name: id_loja_cliente
+        description: chave estrangeira FK3
+      - name: id_entidade_comercial_loja
+        description: chave estrangeira FK2
+      - name: nome_pessoa
+        description: comuna contendo nome dos clientes
+      - name: nome_loja
+        description: coluna contendo nome das lojas que são clientes
+

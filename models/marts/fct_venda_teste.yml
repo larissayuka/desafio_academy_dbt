@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_venda_teste
+    description: fatos vendas
+    columns:
+      - name: sk_venda
+        description: chave primária
+        tests:
+          - unique
+          - not_null

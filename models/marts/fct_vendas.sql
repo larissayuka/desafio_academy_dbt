@@ -39,8 +39,8 @@ with
     )
 
     , select_final as (
-        select
-        /*CHAVE*/
+        select *
+       /*CHAVE
         sk_venda
         , id_venda_pedido_detalhe
         , id_cliente_pedido
@@ -57,9 +57,9 @@ with
         , id_territorio
         , id_cliente
         , id_territorio_cliente
-        /*DATA*/
+        DATA
         , data_pedido
-        /*METRICA*/
+        METRICA
         , subtotal_pedido
         , taxamt_pedido
         , frete_pedido
@@ -69,7 +69,7 @@ with
         , preco_desconto_detalhe
         , faturamento_bruto
         , desconto_produto
-        /*CATEGORIA*/
+        CATEGORIA
         , status_pedido
         , nome_produto
         , nivel_estoque_produto
@@ -83,7 +83,7 @@ with
         , nome_estado
         , codigo_pais
         , nome_pais
-        , nome_territorio
+        , nome_territorio*/
         from transformacoes
     )
     
