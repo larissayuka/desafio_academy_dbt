@@ -3,7 +3,6 @@ with
         select 
         cast (salesorderid as int) as id_venda_pedido_chave
         , cast (salesreasonid as int) as id_venda_motivo_chave
-        , cast (modifieddate as string) as data_modificada_chave
         from {{source('erp','salesorderheadersalesreason')}}
     )
 

@@ -9,3 +9,95 @@ models:
         tests:
           - unique
           - not_null
+      - name: id_venda_pedido
+        description: chave primária dos pedidos das vendas.
+      - name: id_cliente_pedido
+        description: chave estrangeira dos clientes databela de pedidos.
+      - name: id_territorio_pedido
+        description: chave estrangeria do território dos pedidos.
+      - name: id_cartao_credito_pedido
+        description: chave estrangeira dos cartões dos pedidos
+      - name: id_endereco_envio_pedido
+        description: chave estrangeira dos endereços dos pedidos.
+      - name: id_venda_pedido_detalhe
+        description: chave estrangeira dos pedidos de venda da tabela detalhes.
+      - name: id_detalhe_venda_pedido_detalhe
+        description: chave primária dos detalhes dos pedidos da tabela detalhes.
+      - name: id_produto_detalhe
+        description: chave estrangeira dos produtos da tabela dstalhes.
+      - name: id_endereco
+        description: chave primária dos endereços da tablebela de endereços.
+      - name: id_estado_endereco
+        description: chave estrangeira dos estados dos endereços.
+      - name: id_estado
+        description: chave primária dos estados.
+      - name: id_territorio_estado
+        description: chave estrangeria dos territórios da tabela estado
+      - name: codigo_pais_estado
+        description: chave estrangeira dos códigos dos países da tabela estado.
+      - name: codigo_pais
+        description: chave primária dos códigos dos países.
+      - name: id_territorio
+        description: chave primária dos territórios.
+      - name: sk_motivo
+        description: chave surrogada da tabela de motivos.
+      - name: id_venda_pedido_chave
+        description: chave estrangeira dos pedidos da tabela de pedidos e motivos (para interligar tabelas)
+      - name: id_venda_motivo_chave
+        description: chave estrangeira dos motivos da tabela de pedidos e metivos (para interligar tabelas)
+      - name: id_venda_motivo
+        description: chave promária dos motivos das vendas
+      - name: id_produto
+        description: chave primária dos produtos.
+      - name: id_cliente
+        description: chave primária dos cientes.
+      - name: id_pessoa_cliente
+        description: chave estrangeira das pessoas da tabela cliente.
+      - name: id_loja_cliente
+        description: chave estrangeira das lojas da tabela cliente.
+      - name: id_entidade_comercial_loja
+        description: chave primária das lojas.
+      - name: id_entidade_comercial_pessoa
+        description: chave primária das pessoas.
+      - name: id_cartao
+        description: chave primária dos cartões.
+      - name: data_pedido
+        description: coluna das data dos pedidos.
+      - name: quantidade_pedido_detalhe
+        description: coluna de quantidade de pedidos.
+      - name: preco_unitario_detalhe
+        description: coluna dos preços dos produtos
+      - name: preco_desconto_detalhe
+        description: coluna dos preços dos produtos
+      - name: faturamento_bruto
+        description: coluna com a métrica do faturamento bruto.
+      - name: faturamento_liquido
+        description: coluna com a nétrica do faturamento líquido.
+      - name: desconto_produtO
+        description: coluna com a métrica do desconto dos produtos.
+      - name: status_pedido
+        description: coluna com o estatus dos pedidos.
+      - name: endereco1_endereco
+        description: coluna dos endereços do envio dos pedidos.
+      - name: endereco2_endereco
+        description: coluna dos endereços do envio dos pedidos
+      - name: cidade_endereco
+        description: coluna da cidade do envio dos pedidos.
+      - name: nome_estado
+        description: coluna do estado do envio dos pedidos.
+      - name: nome_pais
+        description: coluna do país do envio dos pedidos.
+      - name: nome_territorio
+        description: coluna do território do envio dos pedidos.
+      - name: nome_motivo
+        description: coluna dos motivos dos pedidos.
+      - name: tipo_motivo
+        description: coluna do tipo dos motivos
+      - name: nome_produto
+        description: coluna do nome dos produtos.
+      - name: tipo_cartao
+        description: coluna dos cartões usados.
+      - name: nome_pessoa
+        description: coluna dos nomes das pessoas.
+      - name: nome_loja
+        description: coluna dos nomes das lojas.

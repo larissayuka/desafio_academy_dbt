@@ -5,20 +5,19 @@ models:
     description: dimensão de clientes
     columns:
       - name: id_cliente
-        description: chave primária da tabela clientes
+        description: coluna contendo a chave primária dos clientes.
         tests:
           - unique
           - not_null
       - name: id_pessoa_cliente
-        description: chave estrangeira FK2
+        description: coluna contendo a chave estrangeira de pessoas (FK2).
       - name: id_entidade_comercial_pessoa
-        description: cheve estrangeira FK1
+        description: coluna contendo a cheve estrangeira de pessoas (FK1).
       - name: id_loja_cliente
-        description: chave estrangeira FK3
+        description: coluna contendo a chave estrangeira de lojas (FK3).
       - name: id_entidade_comercial_loja
-        description: chave estrangeira FK2
+        description: coluna contendo a chave estrangeira de lojas (FK2).
       - name: nome_pessoa
-        description: comuna contendo nome dos clientes
+        description: coluna contendo nome dos clientes.
       - name: nome_loja
-        description: coluna contendo nome das lojas que são clientes
-
+        description: coluna contendo nome das lojas clientes.

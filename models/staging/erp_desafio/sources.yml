@@ -22,7 +22,7 @@ sources:
             - unique
             - not_null
     - name: salesreason
-      description: tabela contendo informações de motivos de vendas.
+      description: tabela contendo informações dos motivos de vendas.
       columns:
         - name: salesreasonid
           description: chave primária
@@ -30,7 +30,7 @@ sources:
             - unique
             - not_null  
     - name: salesorderheader
-      description: tabela contendo informações de pedidos de vendas. 
+      description: tabela contendo informações dos pedidos de vendas. 
       columns:
         - name: salesorderid
           description: chave primária
@@ -38,7 +38,7 @@ sources:
             - unique
             - not_null        
     - name: salesorderdetail
-      description: tabela contendo informações de detalhes de vendas.
+      description: tabela contendo informações dos detalhes de vendas.
       columns:
         - name: salesorderdetailid
           description: chave primária
@@ -46,9 +46,9 @@ sources:
             - unique
             - not_null  
     - name: salesorderheadersalesreason
-      description: tabela contendo informações para unir pedidos e detalhes dos pedidos.
+      description: tabela contendo chaves para unir motivos e pedidos.
     - name: salesterritory
-      description: tabela contendo informações de território.
+      description: tabela contendo informações dos territórios.
       columns:
         - name: territoryid
           description: chave primária
@@ -56,7 +56,7 @@ sources:
             - unique
             - not_null 
     - name: product
-      description: tabela contendo informações de produtos.
+      description: tabela contendo informações dos produtos.
       columns:
         - name: productid
           description: chave primária
@@ -64,7 +64,7 @@ sources:
             - unique
             - not_null  
     - name: address
-      description: tabela contendo informações de detalhes de endereços.
+      description: tabela contendo informações dos endereços.
       columns:
         - name: addressid
           description: chave primária
@@ -72,7 +72,7 @@ sources:
             - unique
             - not_null
     - name: stateprovince
-      description: tabela contendo informações de estados.
+      description: tabela contendo informações dos estados.
       columns:
         - name: stateprovinceid
           description: chave primária
@@ -80,7 +80,7 @@ sources:
             - unique
             - not_null  
     - name: countryregion
-      description: tabela contendo informações de detalhes de países.
+      description: tabela contendo informações dos países.
       columns:
         - name: countryregioncode
           description: chave primária
@@ -88,7 +88,7 @@ sources:
             - unique
             - not_null 
     - name: creditcard
-      description: tabela contendo informações do cartão
+      description: tabela contendo informações dos cartões.
       columns:
         - name: creditcardid
           description: chave primária
@@ -96,33 +96,9 @@ sources:
             - unique
             - not_null 
     - name: store
-      description: tabela contendo informações das lojas
+      description: tabela contendo informações das lojas.
       columns:
         - name: businessentityid
-          description: chave primária
-          tests:
-            - unique
-            - not_null 
-    - name: businessentity
-      description: tabela para relação de ids
-      columns:
-        - name: businessentityid
-          description: chave primária
-          tests:
-            - unique
-            - not_null 
-    - name: businessentityaddress
-      description: tabela para relação de idsde endereços
-      columns:
-        - name: addressid
-          description: chave primária
-          tests:
-            - unique
-            - not_null 
-    - name: businessentitycontact
-      description: tabela contendo id dos contatos
-      columns:
-        - name: personid
           description: chave primária
           tests:
             - unique

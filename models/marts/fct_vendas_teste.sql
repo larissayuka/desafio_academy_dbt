@@ -39,7 +39,7 @@ with
         left join cartoes on
         int_vendas.id_cartao_credito_pedido = cartoes.id_cartao
         left join enderecos on
-        int_vendas.id_enviar_para_endereco_pedido = enderecos.id_endereco
+        int_vendas.id_endereco_envio_pedido = enderecos.id_endereco
         left join clientes on
         int_vendas.id_cliente_pedido = clientes.id_cliente
   
@@ -63,18 +63,17 @@ with
         , id_cliente_pedido
         , id_territorio_pedido
         , id_cartao_credito_pedido
+        , id_endereco_envio_pedido        
         , id_venda_pedido_detalhe
-        , id_venda_pedido_detalhe_detalhe
+        , id_detalhe_venda_pedido_detalhe
         , id_produto_detalhe
-        , id_enviar_para_endereco_pedido
         , id_endereco
         , id_estado_endereco
         , id_estado
         , id_territorio_estado
         , codigo_pais_estado
         , codigo_pais
-        , id_territorio
-        , codigo_pais_territorio       
+        , id_territorio      
         , sk_motivo
         , id_venda_pedido_chave
         , id_venda_motivo_chave
@@ -89,10 +88,6 @@ with
         /*DATA*/
         , data_pedido
         /*METRICA*/
-        , subtotal_pedido
-        , taxamt_pedido
-        , frete_pedido
-        , valor_total_pedido
         , quantidade_pedido_detalhe
         , preco_unitario_detalhe
         , preco_desconto_detalhe
@@ -102,6 +97,7 @@ with
         /*CATEGORIA*/
         , status_pedido
         , endereco1_endereco
+        , endereco2_endereco
         , cidade_endereco
         , nome_estado
         , nome_pais
@@ -113,9 +109,6 @@ with
         , nome_pessoa 
         , nome_loja       
         from transformacoes
-
-
-
     )
     
 select *

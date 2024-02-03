@@ -22,7 +22,18 @@ with
     )
 
     , joined_tabelas as (
-        select *
+        select 
+
+        stg_cliente.id_cliente
+        , stg_cliente.id_pessoa_cliente
+        , stg_cliente.id_loja_cliente
+
+        , stg_pessoa.id_entidade_comercial_pessoa
+        , stg_pessoa.nome_pessoa
+
+        , stg_loja.id_entidade_comercial_loja
+        , stg_loja.nome_loja
+
         from stg_cliente
         left join stg_pessoa on
         stg_cliente.id_pessoa_cliente = stg_pessoa.id_entidade_comercial_pessoa
@@ -32,4 +43,3 @@ with
 
 select *
 from joined_tabelas
-order by id_cliente

@@ -5,9 +5,9 @@ models:
     description: dimensão de cartões
     columns:
       - name: id_cartao
-        description: chave primária
+        description: coluna contendo chave primária do tipo de cartão.
         tests:
           - unique
           - not_null
       - name: tipo_cartao
-        description: coluna contendo o tipo do cartão
+        description: coluna contendo o tipo do cartão.

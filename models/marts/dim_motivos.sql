@@ -12,12 +12,12 @@ with
     , joined_tabelas as (
         select 
 
-        stg_vendas_pedidos_motivos.id_venda_pedido_chave
-        , stg_vendas_pedidos_motivos.id_venda_motivo_chave
-
-        , stg_vendas_motivos.id_venda_motivo
+        stg_vendas_motivos.id_venda_motivo
         , stg_vendas_motivos.nome_motivo
         , stg_vendas_motivos.tipo_motivo
+
+        , stg_vendas_pedidos_motivos.id_venda_pedido_chave
+        , stg_vendas_pedidos_motivos.id_venda_motivo_chave
 
         from stg_vendas_pedidos_motivos
         left join stg_vendas_motivos on

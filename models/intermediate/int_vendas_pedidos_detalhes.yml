@@ -5,7 +5,34 @@ models:
     description: modelo intermediário que faz a relação pedidos e detalhes.
     columns:
       - name: sk_venda
-        description: chave surrogada da tabela pedidos e detalhes.
+        description: coluna contendo a chave surrogada da tabela pedidos e detalhes.
         tests:
           - unique
           - not_null
+      - name: id_venda_pedido
+        description: coluna contendo a chave primária dos pedidos das vendas.
+      - name: data_pedido
+        description: coluna contendo a data dos pedidos. 
+      - name: status_pedido
+        description: coluna contendo o status dos pedidos.
+      - name: id_cliente_pedido
+        description: coluna contendo a chave estrangeira dos clientes.
+      - name: id_territorio_pedido
+        description: coluna contendo a chave estrangeira dos territórios
+      - name: id_endereco_envio_pedido
+        description: coluna contendo a chave estrangeira dos endereços de envio dos pedidos.
+      - name: id_cartao_credito_pedido
+        description: coluna contendo a chave estrangeira dos tipos de cartões.
+      - name: id_venda_pedido_detalhe
+        description: coluna contendo a chave primária dos pedidos de venda.
+      - name: id_detalhe_venda_pedido_detalhe
+        description: chave contendo a chave estrangeira dos detalhes dos pedidos.
+      - name: quantidade_pedido_detalhe
+        description: coluna contendo a quantidade de produto vendido.
+      - name: id_produto_detalhe
+        description: coluna contendo os produtos vendidos.
+      - name: preco_unitario_detalhe
+        description: coluna contendo o preço dos produtos.
+      - name: preco_desconto_detalhe
+        description: coluna contendo a pordentagem de desconto da venda.
+

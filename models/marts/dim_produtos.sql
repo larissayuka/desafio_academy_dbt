@@ -9,4 +9,3 @@ with
 
 select *
 from stg_produtos
-

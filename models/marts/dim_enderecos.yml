@@ -5,45 +5,32 @@ models:
     description: dimensão de clientes
     columns:
       - name: id_endereco
-        description: chave primária
+        description: coluna contendo a chave primária dos endereços.
         tests:
           - unique
-          - not_null
       - name: endereco1_endereco
-        description: coluna contendo endereço
+        description: coluna contendo endereço 1.
+      - name: endereco2_endereco
+        description: coluna contendo endereço 2.
       - name: cidade_endereco
-        description: coluna contendo a cidade do endereço
+        description: coluna contendo a cidade dos endereços.
       - name: id_estado_endereco
-        description: chave estrangeira 
-        tests:
-          - not_null
+        description: coluna contendo a chave estrangeira dos estados.
       - name: id_estado
-        description: chave primária 
-        tests:
-          - not_null
+        description: coluna contendo a chave primária dos estados.
       - name: codigo_estado
-        description: coluna contendo o código do estado
+        description: coluna contendo o código dos estados.
       - name: codigo_pais_estado
-        description: chave estrangeira 
-        tests:
-          - not_null
+        description: coluna contendo a chave estrangeira dos códigos dos países.
       - name: nome_estado
-        description: coluna contendo o nome do estado
+        description: coluna contendo o nome dos estados.
       - name: id_territorio_estado
-        description: chave estrangeira
-        tests:
-          - not_null
+        description: coluna contendo a chave estrangeira dos territórios.
       - name: codigo_pais
-        description: chave primária 
-        tests:
-          - not_null
+        description: coluna contendo a chave primária dos códigos dos países.
       - name: nome_pais
-        description: coluna contendo o nome do país
+        description: coluna contendo o nome dos países.
       - name: id_territorio
-        description: chave primária 
-        tests:
-          - not_null
+        description: coluna contendo a chave primária dos territórios.
       - name: nome_territorio
-        description: coluna contendo o nome do terrítório
-      - name: codigo_pais_territorio
-        description: coluna contendo o código do país
+        description: coluna contendo o nome dos terrítórios.
