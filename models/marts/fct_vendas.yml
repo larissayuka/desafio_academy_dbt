@@ -1,14 +1,16 @@
 version: 2
 
 models:
-  - name: fct_venda_teste
+  - name: fct_vendas
     description: fatos vendas
     columns:
-      - name: sk_venda
-        description: chave primária
+      - name: sk_fato_venda
+        description: chave surrogda da tabela fatos.
         tests:
           - unique
           - not_null
+      - name: sk_venda
+        description: chave surrogda da tabela intermediária.
       - name: id_venda_pedido
         description: chave primária dos pedidos das vendas.
       - name: id_cliente_pedido
@@ -73,8 +75,10 @@ models:
         description: coluna com a métrica do faturamento bruto.
       - name: faturamento_liquido
         description: coluna com a nétrica do faturamento líquido.
-      - name: desconto_produtO
+      - name: desconto_produto
         description: coluna com a métrica do desconto dos produtos.
+      - name: id_venda_motivo_auxiliar 
+        description: coluna criada para auxiliar na criação da chave surrogada ta tabela de fatos.
       - name: status_pedido
         description: coluna com o estatus dos pedidos.
       - name: endereco1_endereco

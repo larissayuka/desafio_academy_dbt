@@ -8,6 +8,8 @@ with
         , id_territorio_pedido
         , id_endereco_envio_pedido
         , id_cartao_credito_pedido
+        , subtotal_pedido
+        , valor_total_pedido
         from {{ ref('stg_erp__vendas_pedidos') }}
     )
 
@@ -25,6 +27,8 @@ with
         , stg_vendas_pedidos.id_territorio_pedido
         , stg_vendas_pedidos.id_endereco_envio_pedido
         , stg_vendas_pedidos.id_cartao_credito_pedido
+        , stg_vendas_pedidos.subtotal_pedido
+        , stg_vendas_pedidos.valor_total_pedido
 
         , stg_vendas_detalhes.id_venda_pedido_detalhe
         , stg_vendas_detalhes.id_detalhe_venda_pedido_detalhe

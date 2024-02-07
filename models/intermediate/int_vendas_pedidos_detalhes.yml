@@ -34,5 +34,9 @@ models:
       - name: preco_unitario_detalhe
         description: coluna contendo o preço dos produtos.
       - name: preco_desconto_detalhe
-        description: coluna contendo a pordentagem de desconto da venda.
+        description: coluna contendo a porcentagem de desconto da venda.
+      - name: subtotal_pedido
+        description: coluna contendo o subtotal do pedido. 
+      - name: valor_total_pedido
+        description: coluna contendo o valor total do pedido
 

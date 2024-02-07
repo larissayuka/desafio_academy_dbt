@@ -9,14 +9,24 @@ with
         from {{ ref('dim_enderecos') }}
     )
 
+    , motivos as (
+        select *
+        from {{ ref('dim_motivos') }}
+    )
+
     , produtos as (
         select *
         from {{ ref('dim_produtos') }}
     )
 
+    , cartoes as (
+        select *
+        from {{ ref('dim_cartoes') }}
+    )
+
     , int_vendas as (
         select *
-        from {{ ref('int_vendas') }}
+        from {{ ref('int_vendas_pedidos_detalhes') }}
     )
 
     , joined_tabelas as (
@@ -24,68 +34,99 @@ with
         from int_vendas
         left join produtos on
         int_vendas.id_produto_detalhe = produtos.id_produto
+        left join motivos on
+        int_vendas.id_venda_pedido = motivos.id_venda_pedido_chave
+        left join cartoes on
+        int_vendas.id_cartao_credito_pedido = cartoes.id_cartao
         left join enderecos on
-        int_vendas.id_territorio_pedido = enderecos.id_territorio
+        int_vendas.id_endereco_envio_pedido = enderecos.id_endereco
         left join clientes on
         int_vendas.id_cliente_pedido = clientes.id_cliente
+  
     )
 
     , transformacoes as (
         select 
         *
-        , quantidade_pedido_detalhe * preco_unitario_detalhe as faturamento_bruto
-        , quantidade_pedido_detalhe * preco_unitario_detalhe - (quantidade_pedido_detalhe * preco_unitario_detalhe * (1-preco_desconto_detalhe)) as desconto_produto
+        , (quantidade_pedido_detalhe * preco_unitario_detalhe) / count(sk_venda) over (partition by sk_venda) as faturamento_bruto
+        , quantidade_pedido_detalhe * preco_unitario_detalhe * (1-preco_desconto_detalhe) as faturamento_liquido
+        , quantidade_pedido_detalhe * preco_unitario_detalhe * (preco_desconto_detalhe) as desconto_produto
+        , case
+            when id_venda_motivo is null 
+                then 0
+                else id_venda_motivo
+            end as id_venda_motivo_auxiliar
         from joined_tabelas
     )
 
     , select_final as (
-        select *
-       /*CHAVE
+        select 
+        /*CHAVE*/
         sk_venda
-        , id_venda_pedido_detalhe
+        , id_venda_pedido
         , id_cliente_pedido
         , id_territorio_pedido
-        , id_enviar_para_endereco_pedido
         , id_cartao_credito_pedido
-        , id_venda_pedido_detalhe_detalhe
+        , id_endereco_envio_pedido        
+        , id_venda_pedido_detalhe
+        , id_detalhe_venda_pedido_detalhe
         , id_produto_detalhe
-        , id_produto
-        , id_venda_motivo
-        , id_venda_pedido_chave
         , id_endereco
+        , id_estado_endereco
         , id_estado
-        , id_territorio
+        , id_territorio_estado
+        , codigo_pais_estado
+        , codigo_pais
+        , id_territorio      
+        , sk_motivo
+        , id_venda_pedido_chave
+        , id_venda_motivo_chave
+        , id_venda_motivo
+        , id_produto
         , id_cliente
-        , id_territorio_cliente
-        DATA
+        , id_pessoa_cliente
+        , id_loja_cliente
+        , id_entidade_comercial_loja
+        , id_entidade_comercial_pessoa
+        , id_cartao       
+        /*DATA*/
         , data_pedido
-        METRICA
-        , subtotal_pedido
-        , taxamt_pedido
-        , frete_pedido
-        , valor_total_pedido
+        /*METRICA*/
         , quantidade_pedido_detalhe
         , preco_unitario_detalhe
         , preco_desconto_detalhe
         , faturamento_bruto
-        , desconto_produto
-        CATEGORIA
+        , faturamento_liquido
+        , desconto_produto  
+        , id_venda_motivo_auxiliar  
+        /*CATEGORIA*/
         , status_pedido
-        , nome_produto
-        , nivel_estoque_produto
-        , ponto_reabastecimento_produto
+        , endereco1_endereco
+        , endereco2_endereco
+        , cidade_endereco
+        , nome_estado
+        , nome_pais
+        , nome_territorio
         , nome_motivo
         , tipo_motivo
-        , endereco1_endereco
-        , cidade_endereco
-        , codigo_postal_endereco
-        , codigo_estado
-        , nome_estado
-        , codigo_pais
-        , nome_pais
-        , nome_territorio*/
+        , nome_produto
+        , tipo_cartao
+        , nome_pessoa 
+        , nome_loja       
         from transformacoes
     )
-    
+
+    , criar_chave as (
+        select 
+        cast (sk_venda as string) || '-' || cast (id_venda_motivo_auxiliar as string) || '-' || cast (id_produto_detalhe as string) as sk_fato_venda
+        , *
+        from select_final
+    )
+
+
 select *
+from criar_chave
+
+/*sum (faturamento_bruto) as soma_bruto
 from select_final
+where data_pedido between "2011-01-01" and "2011-12-31"*/
