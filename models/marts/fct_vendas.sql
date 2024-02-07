@@ -51,11 +51,6 @@ with
         , (quantidade_pedido_detalhe * preco_unitario_detalhe) / count(sk_venda) over (partition by sk_venda) as faturamento_bruto
         , ((quantidade_pedido_detalhe * preco_unitario_detalhe) * (1-preco_desconto_detalhe)) / count(sk_venda) over (partition by sk_venda) as faturamento_liquido
         , ((quantidade_pedido_detalhe * preco_unitario_detalhe) * (preco_desconto_detalhe)) / count(sk_venda) over (partition by sk_venda)  as desconto_produto
-        , case
-            when id_venda_motivo is null 
-                then 0
-                else id_venda_motivo
-            end as id_venda_motivo_auxiliar
         from joined_tabelas
     )
 
@@ -96,8 +91,7 @@ with
         , preco_desconto_detalhe
         , faturamento_bruto
         , faturamento_liquido
-        , desconto_produto  
-        , id_venda_motivo_auxiliar  
+        , desconto_produto   
         /*CATEGORIA*/
         , status_pedido
         , endereco1_endereco
@@ -116,11 +110,10 @@ with
 
     , criar_chave as (
         select 
-        cast (sk_venda as string) || '-' || cast (id_venda_motivo_auxiliar as string) || '-' || cast (id_produto_detalhe as string) as sk_fato_venda
+        cast (sk_venda as string)  || '-' || cast (id_produto_detalhe as string) as sk_fato_venda
         , *
         from select_final
     )
-
 
 select *
 from criar_chave
