@@ -124,7 +124,3 @@ with
 
 select *
 from criar_chave
-
-/*sum (faturamento_bruto) as soma_bruto
-from select_final
-where data_pedido between "2011-01-01" and "2011-12-31"*/
