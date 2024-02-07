@@ -36,16 +36,11 @@ with
         , stg_paises.codigo_pais
         , stg_paises.nome_pais
 
-        , stg_territorios.id_territorio
-        , stg_territorios.nome_territorio
-
         from stg_estados
         left join stg_enderecos on
         stg_estados.id_estado = stg_enderecos.id_estado_endereco
         left join stg_paises on
         stg_estados.codigo_pais_estado = stg_paises.codigo_pais
-        left join stg_territorios on
-        stg_estados.id_territorio_estado = stg_territorios.id_territorio
     )
 
 select * 

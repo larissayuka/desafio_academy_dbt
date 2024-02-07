@@ -30,7 +30,3 @@ models:
         description: coluna contendo a chave primária dos códigos dos países.
       - name: nome_pais
         description: coluna contendo o nome dos países.
-      - name: id_territorio
-        description: coluna contendo a chave primária dos territórios.
-      - name: nome_territorio
-        description: coluna contendo o nome dos terrítórios.

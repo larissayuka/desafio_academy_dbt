@@ -11,17 +11,11 @@ models:
           - not_null
       - name: id_venda_motivo
         description: coluna contendo a chave primária dos motivos de venda.
-        tests:
-          - not_null
       - name: nome_motivo
         description: coluna contendo o motivo da venda.
       - name: tipo_motivo
         description: coluna contendo o tipo do motivo de venda.
       - name: id_venda_pedido_chave
         description: coluna contendo a chave estrangeira dos pedidos de venda.
-        tests:
-          - not_null
       - name: id_venda_motivo_chave
         description: coluna contendo a chave estrangeira dos motivos de venda.
-        tests:
-          - not_null

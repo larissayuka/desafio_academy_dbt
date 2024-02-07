@@ -39,8 +39,6 @@ models:
         description: chave estrangeira dos códigos dos países da tabela estado.
       - name: codigo_pais
         description: chave primária dos códigos dos países.
-      - name: id_territorio
-        description: chave primária dos territórios.
       - name: sk_motivo
         description: chave surrogada da tabela de motivos.
       - name: id_venda_pedido_chave
@@ -91,8 +89,6 @@ models:
         description: coluna do estado do envio dos pedidos.
       - name: nome_pais
         description: coluna do país do envio dos pedidos.
-      - name: nome_territorio
-        description: coluna do território do envio dos pedidos.
       - name: nome_motivo
         description: coluna dos motivos dos pedidos.
       - name: tipo_motivo

@@ -49,8 +49,8 @@ with
         select 
         *
         , (quantidade_pedido_detalhe * preco_unitario_detalhe) / count(sk_venda) over (partition by sk_venda) as faturamento_bruto
-        , quantidade_pedido_detalhe * preco_unitario_detalhe * (1-preco_desconto_detalhe) as faturamento_liquido
-        , quantidade_pedido_detalhe * preco_unitario_detalhe * (preco_desconto_detalhe) as desconto_produto
+        , ((quantidade_pedido_detalhe * preco_unitario_detalhe) * (1-preco_desconto_detalhe)) / count(sk_venda) over (partition by sk_venda) as faturamento_liquido
+        , ((quantidade_pedido_detalhe * preco_unitario_detalhe) * (preco_desconto_detalhe)) / count(sk_venda) over (partition by sk_venda)  as desconto_produto
         , case
             when id_venda_motivo is null 
                 then 0
@@ -76,8 +76,7 @@ with
         , id_estado
         , id_territorio_estado
         , codigo_pais_estado
-        , codigo_pais
-        , id_territorio      
+        , codigo_pais     
         , sk_motivo
         , id_venda_pedido_chave
         , id_venda_motivo_chave
@@ -106,7 +105,6 @@ with
         , cidade_endereco
         , nome_estado
         , nome_pais
-        , nome_territorio
         , nome_motivo
         , tipo_motivo
         , nome_produto
