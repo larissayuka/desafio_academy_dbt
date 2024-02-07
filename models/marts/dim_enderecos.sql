@@ -14,11 +14,6 @@ with
         from {{ ref('stg_erp__paises') }}
     )
 
-    , stg_territorios as (
-        select *
-        from {{ ref('stg_erp__vendas_territorios') }}
-    )
-
     , joined_tabelas as (
         select 
         stg_enderecos.id_endereco
