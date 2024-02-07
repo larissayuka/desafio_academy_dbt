@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_motivos
+    description: dimensão de motivos
+    columns:
+      - name: sk_motivo
+        description: coluna contendo a chave surrogada dos motivos de venda.
+        tests:
+          - unique
+          - not_null
+      - name: id_venda_motivo
+        description: coluna contendo a chave primária dos motivos de venda.
+      - name: nome_motivo
+        description: coluna contendo o motivo da venda.
+      - name: tipo_motivo
+        description: coluna contendo o tipo do motivo de venda.
+      - name: id_venda_pedido_chave
+        description: coluna contendo a chave estrangeira dos pedidos de venda.
+      - name: id_venda_motivo_chave
+        description: coluna contendo a chave estrangeira dos motivos de venda.

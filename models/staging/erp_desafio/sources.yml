@@ -1,0 +1,105 @@
+version: 2
+
+sources:
+  - name: erp
+    description: fonte SAP de vendas da Adventure Works
+    schema: sap_adw
+    tables:
+    - name: person
+      description: tabela contendo informações de pessoas.
+      columns:
+        - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
+    - name: customer
+      description: tabela contendo informações de clientes.
+      columns:
+        - name: customerid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
+    - name: salesreason
+      description: tabela contendo informações dos motivos de vendas.
+      columns:
+        - name: salesreasonid
+          description: chave primária
+          tests:
+            - unique
+            - not_null  
+    - name: salesorderheader
+      description: tabela contendo informações dos pedidos de vendas. 
+      columns:
+        - name: salesorderid
+          description: chave primária
+          tests:
+            - unique
+            - not_null        
+    - name: salesorderdetail
+      description: tabela contendo informações dos detalhes de vendas.
+      columns:
+        - name: salesorderdetailid
+          description: chave primária
+          tests:
+            - unique
+            - not_null  
+    - name: salesorderheadersalesreason
+      description: tabela contendo chaves para unir motivos e pedidos.
+    - name: salesterritory
+      description: tabela contendo informações dos territórios.
+      columns:
+        - name: territoryid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: product
+      description: tabela contendo informações dos produtos.
+      columns:
+        - name: productid
+          description: chave primária
+          tests:
+            - unique
+            - not_null  
+    - name: address
+      description: tabela contendo informações dos endereços.
+      columns:
+        - name: addressid
+          description: chave primária
+          tests:
+            - unique
+            - not_null
+    - name: stateprovince
+      description: tabela contendo informações dos estados.
+      columns:
+        - name: stateprovinceid
+          description: chave primária
+          tests:
+            - unique
+            - not_null  
+    - name: countryregion
+      description: tabela contendo informações dos países.
+      columns:
+        - name: countryregioncode
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: creditcard
+      description: tabela contendo informações dos cartões.
+      columns:
+        - name: creditcardid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
+    - name: store
+      description: tabela contendo informações das lojas.
+      columns:
+        - name: businessentityid
+          description: chave primária
+          tests:
+            - unique
+            - not_null 
