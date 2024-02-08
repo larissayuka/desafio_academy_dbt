@@ -18,14 +18,10 @@ models:
         description: coluna contendo a chave estrangeira dos estados.
       - name: id_estado
         description: coluna contendo a chave primária dos estados.
-      - name: codigo_estado
-        description: coluna contendo o código dos estados.
       - name: codigo_pais_estado
         description: coluna contendo a chave estrangeira dos códigos dos países.
       - name: nome_estado
         description: coluna contendo o nome dos estados.
-      - name: id_territorio_estado
-        description: coluna contendo a chave estrangeira dos territórios.
       - name: codigo_pais
         description: coluna contendo a chave primária dos códigos dos países.
       - name: nome_pais

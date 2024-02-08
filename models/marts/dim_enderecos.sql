@@ -26,12 +26,10 @@ with
         , stg_enderecos.endereco2_endereco
         , stg_enderecos.cidade_endereco
         , stg_enderecos.id_estado_endereco
-
+        
         , stg_estados.id_estado
-        , stg_estados.codigo_estado
         , stg_estados.codigo_pais_estado
         , stg_estados.nome_estado
-        , stg_estados.id_territorio_estado
 
         , stg_paises.codigo_pais
         , stg_paises.nome_pais

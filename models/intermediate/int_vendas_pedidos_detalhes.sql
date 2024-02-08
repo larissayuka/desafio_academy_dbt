@@ -5,16 +5,19 @@ with
         , date (data_pedido) as data_pedido
         , status_pedido
         , id_cliente_pedido
-        , id_territorio_pedido
         , id_endereco_envio_pedido
         , id_cartao_credito_pedido
-        , subtotal_pedido
-        , valor_total_pedido
         from {{ ref('stg_erp__vendas_pedidos') }}
     )
 
     , stg_vendas_detalhes as (
-        select *
+        select 
+        id_venda_pedido_detalhe
+        , id_detalhe_venda_pedido_detalhe
+        , quantidade_pedido_detalhe
+        , id_produto_detalhe
+        , preco_unitario_detalhe
+        , preco_desconto_detalhe
         from {{ ref('stg_erp__vendas_detalhes') }}
     )
 
@@ -24,11 +27,8 @@ with
         , stg_vendas_pedidos.data_pedido
         , stg_vendas_pedidos.status_pedido
         , stg_vendas_pedidos.id_cliente_pedido
-        , stg_vendas_pedidos.id_territorio_pedido
         , stg_vendas_pedidos.id_endereco_envio_pedido
         , stg_vendas_pedidos.id_cartao_credito_pedido
-        , stg_vendas_pedidos.subtotal_pedido
-        , stg_vendas_pedidos.valor_total_pedido
 
         , stg_vendas_detalhes.id_venda_pedido_detalhe
         , stg_vendas_detalhes.id_detalhe_venda_pedido_detalhe

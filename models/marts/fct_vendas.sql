@@ -65,7 +65,6 @@ with
         sk_venda
         , id_venda_pedido
         , id_cliente_pedido
-        , id_territorio_pedido
         , id_cartao_credito_pedido
         , id_endereco_envio_pedido        
         , id_venda_pedido_detalhe
@@ -74,7 +73,6 @@ with
         , id_endereco
         , id_estado_endereco
         , id_estado
-        , id_territorio_estado
         , codigo_pais_estado
         , codigo_pais     
         , sk_motivo
