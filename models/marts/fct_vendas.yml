@@ -15,8 +15,6 @@ models:
         description: chave primária dos pedidos das vendas.
       - name: id_cliente_pedido
         description: chave estrangeira dos clientes databela de pedidos.
-      - name: id_territorio_pedido
-        description: chave estrangeria do território dos pedidos.
       - name: id_cartao_credito_pedido
         description: chave estrangeira dos cartões dos pedidos
       - name: id_endereco_envio_pedido
@@ -75,8 +73,8 @@ models:
         description: coluna com a nétrica do faturamento líquido.
       - name: desconto_produto
         description: coluna com a métrica do desconto dos produtos.
-      - name: id_venda_motivo_auxiliar 
-        description: coluna criada para auxiliar na criação da chave surrogada ta tabela de fatos.
+      - name: id_auxiliar 
+        description: coluna criada para auxiliar na criação da chave surrogada da tabela de fatos.
       - name: status_pedido
         description: coluna com o estatus dos pedidos.
       - name: endereco1_endereco

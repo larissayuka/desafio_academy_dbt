@@ -16,8 +16,6 @@ models:
       - name: status_pedido
         description: coluna contendo o status dos pedidos.
       - name: id_cliente_pedido
-        description: coluna contendo a chave estrangeira dos clientes.
-      - name: id_territorio_pedido
         description: coluna contendo a chave estrangeira dos territórios
       - name: id_endereco_envio_pedido
         description: coluna contendo a chave estrangeira dos endereços de envio dos pedidos.
@@ -35,8 +33,4 @@ models:
         description: coluna contendo o preço dos produtos.
       - name: preco_desconto_detalhe
         description: coluna contendo a porcentagem de desconto da venda.
-      - name: subtotal_pedido
-        description: coluna contendo o subtotal do pedido. 
-      - name: valor_total_pedido
-        description: coluna contendo o valor total do pedido
 
